@@ -3,10 +3,21 @@ import { useNavigate} from "react-router-dom";
 import { Link } from "react-router-dom";
 
 const Login = () => {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [error, setError] = useState("");
-  // const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    
+    if (email.endsWith("@gmail.com") && password.length >= 6) {
+      console.log("Login successful");
+      navigate('/chatbox');
+    } else {
+      alert("Invalid email or password");
+    }
+  };
 
 
   return (
@@ -16,20 +27,25 @@ const Login = () => {
 
 
         <div>
-          <form >
+          <form onSubmit={handleLogin}>
             <input type="email"
              placeholder="Enter your email" 
              value={email}   
              className="border p-2 mx-15 rounded w-70"
-             onChange={(e) => setEmail(e.target.value)} />
+             onChange={(e) => setEmail(e.target.value)}
+              />
 
             <input type="password"
              placeholder="Enter your password"
              value={password}
              className="border p-2 mx-15 my-6 rounded w-70"
-             onChange={(e) => setPassword(e.target.value)} />
+             onChange={(e) => setPassword(e.target.value)}/>
 
-            <button type="submit" className="bg-[#e5e5e5] pt-3 pl-10 pr-10 pb-3 mx-37 rounded-md hover:bg-[#a88f78] transition">Login</button>
+            <button 
+              type="submit" 
+              className="bg-[#e5e5e5] pt-3 pl-10 pr-10 pb-3 mx-37 rounded-md hover:bg-[#a88f78] transition"
+              // onClick={() => navigate('/chatbox')}
+              >Login</button>
           </form>
 
           <p className="text-center my-5"> Don't have an account? {""} <Link to="/signup" className="text-blue-500 hover:underline">Sign up</Link></p>

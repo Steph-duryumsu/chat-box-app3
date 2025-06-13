@@ -4,20 +4,34 @@ import { Link } from "react-router-dom";
 
 
 const Signup = () => {
-  // const [email, setEmail] = useState("");
-  // const [password, setPassword] = useState("");
-  // const [error, setError] = useState("");
-  // const navigate = useNavigate();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [fullname, setFullName] = useState("");
+  const navigate = useNavigate();
+
+  const handleLogin = (e) => {
+    e.preventDefault();
+    
+    if (email.endsWith("@gmail.com") && password.length >= 6) {
+      console.log("Login successful");
+      navigate('/chatbox');
+    } else {
+      alert("Invalid email or password");
+    }
+  };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-[#f6f1eb">
+    <div className="min-h-screen flex items-center justify-center bg-[#f6f1eb]">
     <div className="bg-[#F7D9BC] h-100 rounded shadow-md w-100">
       <h2 className="text-2xl bold center my-8 font-bold text-center">Hi user, </h2>
 
       <div>
-        <input type="text"
+        <form onSubmit={handleLogin}>
+          <input type="text"
          placeholder="Enter your full name"
          className="border p-2 mx-15 rounded w-70"
+         value={fullname}
+         onChange={(e) => setFullName(e.target.value)}
          />
 
         <input type="email"
@@ -36,6 +50,8 @@ const Signup = () => {
 
         <button className="bg-[#e5e5e5] pt-3 pl-10 pr-10 pb-3 mx-37 rounded-md hover:bg-[#a88f78] transition" >SignUP</button>
         <p className="text-center my-5" >Already have an account? <Link to="/" className="text-blue-500">Login</Link></p>
+        </form>
+        
       </div>
       
     </div>
