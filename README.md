@@ -1,3 +1,10 @@
+CHAT BOX APP
+
+FEATURES
+1. Real time messaging with a chatbox
+2. Ask for anything and you will get a reply
+
+FILE STRUCTURE
 chat-box-app3/
 ├── public/
 │   └── vite.svg
@@ -25,3 +32,8 @@ chat-box-app3/
 ├── vite.config.js
 └── README.md
 |__eslint.config.js
+
+LANGUAGES
+1. React vite
+2. Tailwind css for styling
+3. React router for routing
