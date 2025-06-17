@@ -3,7 +3,7 @@ import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom" ;
 import Signup from './Components/Signup' ; 
 import Login from './Components/Login';
-import Chatbox from './components/chatbox';
+import Chatbox from './Components/chatbox';
 import Signin from './Components/Signin';
 
 
