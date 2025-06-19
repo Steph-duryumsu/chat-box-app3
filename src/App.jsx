@@ -14,7 +14,6 @@ function App() {
         <Routes>
           <Route path='/' element={<Login/>}></Route>
           <Route path='/signup' element={<Signup/>}></Route>
-          <Route path='/signin' element={<Signin/>}></Route>
           <Route path='/chatbox' element={<Chatbox/>}></Route>
         </Routes>
       </Router>
@@ -22,6 +21,7 @@ function App() {
        {/* <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button> */}
+         {/* <Route path='/signin' element={<Signin/>}></Route> */}
     </div>
   )
 }
